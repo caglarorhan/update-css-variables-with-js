@@ -2,9 +2,12 @@ window.addEventListener('load',function(){totalLoad();});
 
 
 function totalLoad(){
-    const controls = document.querySelectorAll('.controls input');
-    controls.forEach(input => input.addEventListener('mousedown',sync,true));
-    controls.forEach(input => input.addEventListener('mouseup',unsync,true));
+    const controlsRange = document.querySelectorAll('.controls input[type="range"]');
+    const controlsColor = document.querySelectorAll('.controls input[type="color"]');
+    controlsRange.forEach(input => input.addEventListener('mousedown',sync,true));
+    controlsRange.forEach(input => input.addEventListener('mouseup',unsync,true));
+    controlsColor.forEach(input => input.addEventListener('change',detector,true));
+
 }
 
 
